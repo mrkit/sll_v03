@@ -7,10 +7,10 @@ class Contact extends Component {
 
   render(){
     return (
-      <Fragment>
+      <div className='contact-page'>
         <h1>BE IN TOUCH</h1>
         
-        <form>
+        <form className='contact-page-form'>
           <div>
             <input type="text" name='name' placeholder='Name *'/>
             <input type="email" name='email' placeholder='Email *'/>
@@ -19,7 +19,7 @@ class Contact extends Component {
           <textarea name="message" cols="30" rows="10" placeholder='Message'></textarea>
           <button>Send</button>
         </form>
-      </Fragment>
+      </div>
     )
   }
 }
