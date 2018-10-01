@@ -1,0 +1,110 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  font-family: sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h6 {
+  font-weight: 100;
+  padding-left: .5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: .08fr 15fr .5fr;
+  
+  header {
+    border-bottom: 1px solid black;
+    background: #fff;
+    display: grid;
+    grid-template-columns: .2fr 1fr .9fr;
+    
+   a {
+      text-decoration: none;
+      color: black;
+      padding-top: .8rem;
+    }
+
+    a:hover {
+      color: #B28A5A;
+      border-top: 4px solid black;
+    }
+
+    a:active {
+      color: indianred;
+    }
+    
+    nav {
+      display: grid;
+      align-content: center;
+      
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, .2fr);
+        
+        li {
+          list-style: none;
+        }
+      }
+    }
+    
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr .4fr .4fr;
+      grid-gap: .2rem;
+      align-content: center;
+      
+      .toggleLogIn {
+        font-size: .8rem;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      
+      .toggleLogIn:hover {
+        color: purple;
+      }
+    }
+    
+  }
+  
+  main {
+    box-shadow: 5px 5px 5px grey;
+//    background: url(https://images.pexels.com/photos/990826/pexels-photo-990826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) -41rem center no-repeat black;
+//    background-size: 120%;
+//    background-blend-mode: lighten;
+//    background: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url(https://images.pexels.com/photos/938962/pexels-photo-938962.jpeg?cs=srgb&dl=background-colors-cup-938962.jpg&fm=jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0rem -29rem;
+    display: grid;
+  
+    
+    .jumbo {
+      background: rgba(255, 255, 255, 0.43);
+      border-radius: 4px;
+      display: grid;
+      width: 20rem;
+      justify-content: center;
+      text-align: justify;
+    }
+  }
+  
+  
+  footer {
+    background: #FFDCB4;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: .4rem;
+  }
+}
