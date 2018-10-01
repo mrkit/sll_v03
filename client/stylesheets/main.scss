@@ -27,7 +27,7 @@ h1, h2, h6 {
 .container {
   display: grid;
   //  The fixed position header isn't included in this
-  grid-template-rows: 5fr .5fr;
+  grid-template-rows: 5fr .2fr;
   
   header {
     position: fixed;
