@@ -6,9 +6,9 @@ const e = require('express'),
       db = require('./db'),
       force = process.env.NODE_ENV === 'development' ? true : false;
 
-//console.log('Node env', process.env.NODE_ENV);
+// console.log('Node env', process.env.NODE_ENV);
 
-a.use('/assets', e.static(r(__dirname, 'assets')));
+a.use('/assets', e.static(r(__dirname, '..', 'assets')));
 a.use([
   e.static(r(__dirname, '..', 'dist')),
   m('dev'),
