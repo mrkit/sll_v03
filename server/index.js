@@ -27,4 +27,4 @@ a.use((err, req, res, next) => {
 });
 
 db.conn.sync({ force  })
-.then(() => a.listen(3006,  console.log('listening on 3000')));
+.then(() => a.listen(3006, console.log('listening on 3000')));
