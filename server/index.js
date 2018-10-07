@@ -3,7 +3,8 @@ const e = require('express'),
       r = require('path').resolve,
       m = require('morgan'),
       bp = require('body-parser'),
-      db = require('./db');
+      db = require('./db'),
+      force = process.env.NODE_ENV === 'development' ? true : false;
 
 //console.log('Node env', process.env.NODE_ENV);
 
@@ -25,5 +26,5 @@ a.use((err, req, res, next) => {
   }
 });
 
-db.conn.sync({ force: true })
-.then(() => a.listen(3000, console.log('listening on 3000')));
+db.conn.sync({ force  })
+.then(() => a.listen(3006,  console.log('listening on 3000')));

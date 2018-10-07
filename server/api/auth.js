@@ -1,11 +1,12 @@
 const r = require('express').Router(),
       jwt = require('jsonwebtoken'),
-      Users = require('../db').models.Users;
+      UsersSll = require('../db').models.UsersSll,
+      { jwt_password } = require('../../assets/.env');
 
 r.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
   console.log('HELLO', username, password);
-  Users.create({ username, password })
+  UsersSll.create({ username, password })
   .then(user => res.send(createToken(user)))
   .catch(next);
 });
@@ -13,10 +14,10 @@ r.post('/signup', (req, res, next) => {
 r.post('/login', (req, res, next) => {
   const { username, password } = req.body;
   
-  Users.findOne({ where: { username }})
+  UsersSll.findOne({ where: { username }})
   .then(user => {
     if(user){
-      Users.isValidPassword(password)
+      UsersSll.isValidPassword(password)
       .then(correctPW => {
         correctPW ?
           res.send(createToken(user)) :
@@ -37,14 +38,14 @@ r.get('/secret', (req, res, next) => {
 
 //Helper Functions
 function createToken(user){
-  return jwt.sign({id: user.id, username: user.username}, 'secret', {expiresIn: '1h'});
+  return jwt.sign({id: user.id, username: user.username}, jwt_password, {expiresIn: '1h'});
 }
 
 function verifyToken(req, res, next){
   console.log(req.headers)
   if(req.headers.authorization){
     const token = req.headers.authorization.split(' ')[1];
-    jwt.verify(token, 'secret', function(err, user){
+    jwt.verify(token, jwt_password, function(err, user){
       console.log('Token verified - how to send this sucker?', user);
       next();
     });

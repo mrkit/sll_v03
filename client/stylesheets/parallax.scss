@@ -1,0 +1,14 @@
+.par {
+  background: url(https://images.pexels.com/photos/814898/pexels-photo-814898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-position: -10rem  0rem;
+  background-repeat: no-repeat;
+  height: 300rem;
+  z-index: 0;
+
+  .par-1 {
+    background: url(https://images.pexels.com/photos/302083/pexels-photo-302083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: 10%;
+    background-position: 50rem;
+    z-index: 1;
+  }
+}
