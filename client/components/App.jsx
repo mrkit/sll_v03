@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import Admin from './pages/Admin/Admin';
 import axios from 'axios';
+
 
 class App extends Component {
   componentWillMount(){
@@ -14,11 +17,17 @@ class App extends Component {
   
   render(){
     return (
-      <div className='container'>
-        <Header/>
-        <Main />
-        <Footer />
-      </div>
+      <Switch>
+        <Route path='/admin' component={Admin}/>
+        <Route exact path='/' render={() => (
+          <div className='container'>
+            <Header/>
+            <Main />
+            <Footer />
+          </div>
+        )}/>
+
+      </Switch>
     )
   }
 }

@@ -1,0 +1,46 @@
+.admin {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+
+  .admin-header {
+    background: rgb(223, 255, 240);
+  }
+
+  .admin-login {
+    width: 15rem;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    
+  }
+
+  .admin-cms {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    .admin-cms-posts {
+      background: rgb(154, 154, 171);
+      padding: 1rem;
+    }
+    .admin-cms-create-post {
+      background: rgb(195, 208, 195);
+      padding: 2rem;
+
+      > form {
+        display: grid;
+        grid-template-rows: 1fr 1fr 5fr 1fr;
+        width: 80%;
+
+        input, textarea {
+          outline: none;
+        }
+      }
+    }
+  }
+
+}

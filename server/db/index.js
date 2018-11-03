@@ -1,10 +1,11 @@
 const conn = require('./conn'),
-      Users = require('./Users'),
+      UsersSll = require('./UsersSll'),
+      Posts = require('./Posts'),
       Contact = require('./Contact');
 
 module.exports = {
   conn,
   models: {
-    Users, Contact
+    UsersSll, Contact, Posts
   }
 }
