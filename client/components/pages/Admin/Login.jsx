@@ -7,6 +7,7 @@ class Login extends Component {
     e.preventDefault();
     const { username, password } = e.target;
     const { handleLogin } = this.props;
+    
     axios.post('/api/auth/login', { username: username.value, password: password.value})
     .then(res => res.data)
     .then(token => localStorage.setItem('bizken', token))

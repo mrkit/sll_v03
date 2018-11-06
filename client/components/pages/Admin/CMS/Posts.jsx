@@ -17,11 +17,13 @@ class Posts extends Component {
     return (
       <div className='admin-cms-posts'>
         <h2>Posts:</h2>
-        {
-          posts.map(post => (
-            <li key={post.id}>{post.title}{post.date}{post.article}{post.author}</li>
-          ))
-        }
+        <ul>
+          {
+            posts.map(post => (
+              <li key={post.id}>{post.date}  |  <strong>{post.title}</strong></li>
+            ))
+          }
+        </ul>
       </div>
     );
   }

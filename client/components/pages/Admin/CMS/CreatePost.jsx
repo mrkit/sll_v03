@@ -18,10 +18,11 @@ class CreatePost extends Component {
     e.preventDefault();
 
     const title = e.target.title.value,
-            author = e.target.author.value,
-            article = e.target.article.value;
+          article = e.target.article.value;
 
     const date = this.dateStamp();
+    const author = 'luisa';
+
     console.log(date);
     axios.post('/api/posts', { title, date,  author, article })
     .then(res => res.data)
@@ -41,8 +42,7 @@ class CreatePost extends Component {
       <div className='admin-cms-create-post'>
         <h2>Create New Post:</h2>
         <form onSubmit={handleCreatingPost}>
-          <input type='text' name='title' placeholder='Title' autoFocus/>
-          <input type="text" name='author' placeholder='Author'/>
+          <input type='text' name='title' placeholder='Title' autoFocus autoComplete='off'/>
           <textarea name='article' cols="30" rows="10"></textarea>
           <button>Create new post</button>
         </form>

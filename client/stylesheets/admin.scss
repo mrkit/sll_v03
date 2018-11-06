@@ -7,6 +7,8 @@
 
   .admin-header {
     background: rgb(223, 255, 240);
+    display: grid;
+    justify-content: center;
   }
 
   .admin-login {
@@ -21,23 +23,52 @@
 
   .admin-cms {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr 5fr;
+
+    .admin-cms-nav {
+      border-right: 1px solid black;
+      padding: 1rem;
+
+      >ul {
+        li {
+          list-style: none;
+        }
+      }
+    }
 
     .admin-cms-posts {
-      background: rgb(154, 154, 171);
       padding: 1rem;
+      border-right: 1px solid black;
+
+      >ul {
+        height: 15rem;
+        border: 1px solid black;
+        padding: 0;
+
+        li {
+          border: 1px solid black;
+          list-style: none;
+          line-height: 2rem;
+        }
+
+        li:hover {
+          background: rgb(130, 124, 124);
+        }
+      }
     }
     .admin-cms-create-post {
-      background: rgb(195, 208, 195);
       padding: 2rem;
 
       > form {
-        display: grid;
-        grid-template-rows: 1fr 1fr 5fr 1fr;
-        width: 80%;
+          display: grid;
+          grid-template-rows: 1fr 5fr 1fr;
+          grid-gap: 2rem;
+          width: 95%;
+          height: 75%;
 
         input, textarea {
           outline: none;
+          font-size: 1rem;
         }
       }
     }
