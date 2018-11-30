@@ -43,20 +43,17 @@ class Home extends Component {
         
         <div className="center-piece">
           <h1 className='center-piece-sub-title'>A Blog About</h1>
-          <article>
+          <article className="center-piece-1">
             <h1 className='center-piece-title'>Living</h1>
             <p className="center-piece-description">life consciously</p>
-            <img src="https://images.pexels.com/photos/860487/pexels-photo-860487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Flower"/>
           </article>
-          <article>
+          <article className="center-piece-2">
             <p className="center-piece-description"></p>
-            <img src="https://images.pexels.com/photos/374898/pexels-photo-374898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bedroom"/>
             <h1 className='center-piece-title'>Life</h1>
           </article>
-          <article>
+          <article className="center-piece-3">
             <h1 className='center-piece-title'>Simply</h1>
             <p className="center-piece-description"></p>
-            <img src="https://images.pexels.com/photos/158179/lake-constance-sheep-pasture-sheep-blue-158179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Field"/>
           </article>
         </div>
         

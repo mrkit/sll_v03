@@ -136,46 +136,54 @@ h1, h2, h6 {
       }
     }
 
-.center-piece {
-    display: grid;
-    grid-template-rows: .2fr 1fr 1fr 1fr;
-    grid-row-gap: 8rem;
-    justify-self: center;
-  
-  .center-piece-sub-title {
-    font-family: Times New Roman;
-    margin: 0;
-//    margin-left: 4rem;
-    font-size: 4.3rem;
-    font-style: italic;
-    text-align: center;
-  }
-    
-    article {
-      width: 65rem;
-      height: 15rem;
+  .center-piece {
+      width: 100vw;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      justify-items: center;
+      grid-template-rows: .2fr 1fr 1fr 1fr;
+      grid-row-gap: 3rem;
+      justify-self: center;
+
+    .center-piece-sub-title {
+      font-family: Times New Roman;
+      margin: 5rem;
+      font-size: 4.3rem;
       font-style: italic;
-      
-      h1 {
-        font-size: 5rem;
-        font-weight: 100;
-        font-style: italic;
-        font-family: Times New Roman;
-      }
-      
-      img {
-        width: 17rem;
-        height: 13rem;
-        object-fit: contain;
-      }
+      text-align: center;
     }
-  }
+
+      article {
+        height: 20rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+        font-style: italic;
+
+        h1 {
+          font-size: 5rem;
+          font-weight: 100;
+          font-style: italic;
+          font-family: Times New Roman;
+        }
+
+      }
+    
+    }
+    
+    .center-piece-1 {
+      background: url("https://images.pexels.com/photos/860487/pexels-photo-860487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    }
+    
+    .center-piece-2 {
+      background: url("https://images.pexels.com/photos/374898/pexels-photo-374898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+      background-position: 0 31rem;
+    }
+    
+    .center-piece-3 {
+      background: url("https://images.pexels.com/photos/158179/lake-constance-sheep-pasture-sheep-blue-158179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    }
   }
   
   footer {
