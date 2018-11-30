@@ -91,17 +91,16 @@ h1, h2, h6 {
     
     .banner-overlay {
       background-color: rgba(50, 48, 62, 0);
-      height: 103%;
+      height: 94%;
       width: 100%;
       position: absolute;
     }
 
     .banner {
       height: 45rem;
-      background-image: url(https://images.pexels.com/photos/938962/pexels-photo-938962.jpeg?cs=srgb&dl=background-colors-cup-938962.jpg&fm=jpg);
+      background-image: url('/assets/images/backgroundtea.jpg');
       background-repeat: no-repeat;
       background-size: 114%;
-      background-position: -6rem -29rem;
       border-radius: 4px;
       display: grid;
       justify-content: center;
@@ -153,7 +152,6 @@ h1, h2, h6 {
   }
     
     article {
-      border: 1px solid black;
       width: 65rem;
       height: 15rem;
       display: grid;
