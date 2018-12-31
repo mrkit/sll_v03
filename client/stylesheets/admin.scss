@@ -1,6 +1,4 @@
 .admin {
-  margin: 0;
-  padding: 0;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 6fr;
@@ -13,12 +11,20 @@
 
   .admin-login {
     width: 15rem;
-    height: 15rem;
-    border: 1px solid black;
+    height: 8rem;
     border-radius: 4px;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3rem;
+    justify-self: center;
+    align-self: center;
     
+    input {
+      outline: none;
+      border-style: none;
+      border-bottom: 1px solid black;
+      font-size: 1.5rem;
+    }
   }
 
   .admin-cms {

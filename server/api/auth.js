@@ -21,12 +21,13 @@ r.post('/login', (req, res, next) => {
       .then(correctPW => {
         correctPW ?
           res.send(createToken(user)) :
-          res.status(401).res('Wrong Password!');
+          res.status(401).send('Wrong Password!');
       })
     } else {
-      res.status(401).res('Username does not exist');
+      res.status(401).send('Username does not exist');
     }
   })
+  .catch(next);
 });
 
 //Protected Routes
