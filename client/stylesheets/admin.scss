@@ -1,12 +1,20 @@
 .admin {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 7fr;
 
   .admin-header {
-    background: rgb(223, 255, 240);
+    background: #b3ecff;
     display: grid;
+    grid-template-columns: 1fr .1fr;
     justify-content: center;
+    padding: 0 1rem;
+    box-shadow: 2px 2px 3px grey;
+    
+    button {
+      height: 1rem;
+      align-self: center;
+    }
   }
 
   .admin-login {
@@ -46,12 +54,14 @@
       padding: 1rem;
       border-right: 1px solid black;
 
-      >ul {
+      .admin-cms-posts-ul {
         height: 15rem;
         border: 1px solid black;
         padding: 0;
 
-        li {
+        .admin-cms-posts-ul-li {
+          display: grid;
+          grid-template-columns: 1fr 1fr .5fr .5fr;
           border: 1px solid black;
           list-style: none;
           line-height: 2rem;
