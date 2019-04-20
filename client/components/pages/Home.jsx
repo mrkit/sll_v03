@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../store';
 
 class Home extends Component {
   state = {
@@ -27,58 +29,49 @@ class Home extends Component {
     .then(res => res.data)
     .then(username => this.setState({ username }))
     .catch(err => console.log(`Axios Get Secret error: ${err.message}`));
+    
+    this.props.loadPosts();
   }
 
   render(){
     const { username } = this.state;
-    
+    const { posts } = this.props;
     return (
       <Fragment>
         <div className="banner">
-        <div className='banner-overlay' id='bannerOverlay'></div>
+          <div className='banner-overlay' id='bannerOverlay'></div>
           <div className='banner-title' id='bannerTitle'>
             <h2>Simply Living Light</h2>
           </div>
         </div>
         
-        <div className="center-piece">
-          <h1 className='center-piece-sub-title'>A Blog About</h1>
-          <article className="center-piece-1">
-            <h1 className='center-piece-title'>Living</h1>
-            <p className="center-piece-description">life consciously</p>
-          </article>
-          <article className="center-piece-2">
-            <p className="center-piece-description"></p>
-            <h1 className='center-piece-title'>Life</h1>
-          </article>
-          <article className="center-piece-3">
-            <h1 className='center-piece-title'>Simply</h1>
-            <p className="center-piece-description"></p>
-          </article>
-        </div>
-        
-        <div className="projects">
-          <h1>Projects</h1>
-          <div>
-            <article>
-              <h2 className='projects-title'>01</h2>
-              <p className="projects-date">16  /  03  /  2016</p>
-              <p className="projects-description">Living: Traveling light/Trip to Colorado (Luisa Blog entry)</p>
-            </article>
-            <article>
-              <h2 className='projects-title'>02</h2>
-              <p className="projects-date">01  /  02  /  2017</p>
-              <p className="projects-description">Simply: Year 1 of the journey into rearing your own flock</p>
-            </article>
-            <article>
-              <h2 className='projects-title'>03</h2>
-              <p className="projects-date">27  /  09  /  2023</p>
-              <p className="projects-description">Life: Working girl's tips to balancing comfort with style</p>
-            </article>
-          </div>
+        <div className="posts">
+         {
+            posts.map(post => (
+              <article className='post' key={post.id}>
+                <h2 className='post-title'>{post.title}</h2>
+                <div className='post-metadata'>
+                  <p className="post-metadata-date">{post.date}</p>
+                  <p className="post-metadata-author">{post.author}</p>
+                </div>
+                <p className="post-description">{post.article}</p>
+              </article>
+            ))
+          }
+          
         </div>
       </Fragment>
     )
   }
 }
-export default Home;
+
+const mapState = state => { 
+  console.log('State posts', state.posts)
+  return { posts: state.posts }
+};
+
+const mapDispatch = dispatch => ({
+  loadPosts(){dispatch(fetchPosts())}
+});
+
+export default connect(mapState, mapDispatch)(Home);

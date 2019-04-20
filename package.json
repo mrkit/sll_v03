@@ -1,6 +1,6 @@
 {
-  "name": "sll_v03",
-  "version": "1.0.0",
+  "name": "sll",
+  "version": "4.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {

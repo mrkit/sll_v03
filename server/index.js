@@ -27,6 +27,6 @@ a.use((err, req, res, next) => {
 });
 
 db.conn.sync({ force  })
-.then(() => db.models.UsersSll.create({ username: 'luisa', password: 'tokyo' }))
+.then(() => db.models.UsersSll.create({ username: 'luisa', password: 'tokyo' }))  
 .then(() => db.models.Posts.create({title: 'Test Title', date:'11/2/2018', author: 'john', article: 'bob ate my homework'}))
 .then(() => a.listen(3006, console.log('listening on 3006')));

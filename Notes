@@ -3,3 +3,23 @@ Babel Plugins for stage 2 and 3:
 
 TO DOs:
 Remove position attribute and use grid-template-areas or something to position .jumbo properly
+
+
+
+Removed:
+
+<div className="center-piece">
+  <h1 className='center-piece-sub-title'>A Blog About</h1>
+  <article className="center-piece-1">
+    <h1 className='center-piece-title'>Living</h1>
+    <p className="center-piece-description">life consciously</p>
+  </article>
+  <article className="center-piece-2">
+    <p className="center-piece-description"></p>
+    <h1 className='center-piece-title'>Life</h1>
+  </article>
+  <article className="center-piece-3">
+    <h1 className='center-piece-title'>Simply</h1>
+    <p className="center-piece-description"></p>
+  </article>
+</div>

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { fethPosts } from '../../../../store';
 
 class CreatePost extends Component {
+  state = {
+    posts: []
+  }
 
   dateStamp = () => {
     const currentDate = new Date(),
@@ -26,8 +30,8 @@ class CreatePost extends Component {
     console.log(date);
     axios.post('/api/posts', { title, date,  author, article })
     .then(res => res.data)
-    .then(post => console.log(post))
-    .catch(err => `Axios create post error ${err.message}`);
+    .then(post => this.setState({ posts: [...this.state.posts, post]}))
+    .catch(err => `Axios create post error ${err.message}`)
     
 
     e.target.title.value = '';

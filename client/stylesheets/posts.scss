@@ -1,0 +1,39 @@
+.posts {
+    display: grid;
+    grid-template-rows: .2fr 3fr;
+    width: 55rem;
+    margin-left: 7rem;
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    .post {
+      display: grid;
+      width: 55rem;
+      
+      .post-title {
+        font-size: 2.5rem;
+        font-style: italic;
+        font-family: Times New Roman;
+        margin: 0;
+      }
+      .post-metadata {
+        display: grid;
+        grid-template-columns: auto-fit;
+        height: 4rem;
+        
+        .post-metadata-date {
+          font-size: 1.3rem;
+        }
+        .post-metadata-author {
+          
+        }
+        
+      }
+      
+      .post-description {
+        font-size: 1.2rem;
+      }
+    }
+  }

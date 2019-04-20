@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 class AdminHeader extends Component {
 
@@ -6,7 +7,10 @@ class AdminHeader extends Component {
     const { handleLogout, loggedIn } = this.props;
     return (
       <header className='admin-header'>
-        <h1>Admin</h1>
+        <div>
+          <h1>Admin</h1>
+          <Link to='/'>Home</Link>
+        </div>
        {loggedIn ? <button onClick={handleLogout}>Logout</button> : null}
       </header>
     );

@@ -48,13 +48,6 @@ class Header extends Component {
             </li>
           </ul>
         </nav>
-
-        {/*<form className={signOrLog} onSubmit={handleSubmit}>
-          <input type='text' name='username' placeholder={signOrLog[0].toUpperCase() + signOrLog.slice(1)} autoFocus autoComplete='off'/>
-          <input type='password' name='password' placeholder='Password'/>
-          <button>Submit</button>
-          <span className='toggleLogIn' onClick={toggleLogIn}>{toggleLogInText}</span>
-        </form>*/}
       </header>
     )
   }
