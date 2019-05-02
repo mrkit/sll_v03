@@ -2,7 +2,7 @@ const conn = require('./conn'),
       S = conn.Sequelize,
       bcrypt = require('bcrypt');
 
-const UsersSll = conn.define('user', {
+const Users = conn.define('slluser', {
   username: {
     type: S.STRING,
     allowNull: false,
@@ -23,10 +23,10 @@ const UsersSll = conn.define('user', {
   }
 });
 
-UsersSll.isValidPassword = function(password){
+Users.isValidPassword = function(password){
   return bcrypt.compare(password, this.password)
   .then(correctPW => correctPW)
   .catch(err => console.log(`Bcrypt Compare error message: ${err.message}`));
 }
 
-module.exports = UsersSll;
+module.exports = Users;

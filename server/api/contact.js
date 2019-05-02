@@ -1,7 +1,6 @@
 const r = require('express').Router(),
       Contact = require('../db').models.Contact;
 
-
 r.get('/', (req, res, next) => {
     Contact.findAll()
     .then(contact => res.send(contact))

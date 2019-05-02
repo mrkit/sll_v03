@@ -1,12 +1,12 @@
 const r = require('express').Router(),
       jwt = require('jsonwebtoken'),
-      UsersSll = require('../db').models.UsersSll,
+      Users = require('../db').models.Users,
       { jwt_password } = require('../../assets/.env');
 
 r.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
   console.log('HELLO', username, password);
-  UsersSll.create({ username, password })
+  Users.create({ username, password })
   .then(user => res.send(createToken(user)))
   .catch(next);
 });
@@ -14,10 +14,10 @@ r.post('/signup', (req, res, next) => {
 r.post('/login', (req, res, next) => {
   const { username, password } = req.body;
   
-  UsersSll.findOne({ where: { username }})
+  Users.findOne({ where: { username }})
   .then(user => {
     if(user){
-      UsersSll.isValidPassword(password)
+      Users.isValidPassword(password)
       .then(correctPW => {
         correctPW ?
           res.send(createToken(user)) :
