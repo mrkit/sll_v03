@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .container {
   display: grid;
   justify-content: center;
@@ -72,8 +76,9 @@ body {
       
       .post {
         background: thistle;
+        padding-right: 2rem;
         display: grid;
-        grid-template-rows: 10% 5% 1fr;
+        grid-template-rows: 4rem 2rem 1fr;
         grid-template-areas:
           "img title"
           "img meta"
@@ -110,6 +115,7 @@ body {
           margin: 0;
           grid-area: description;
           border-top: 1px solid black;
+          padding-top: 1rem;
         }
       }
     }
@@ -121,6 +127,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    color: white;
   }
 }
 
