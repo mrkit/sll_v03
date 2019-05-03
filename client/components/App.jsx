@@ -5,7 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import Admin from './pages/Admin/Admin';
 import axios from 'axios';
-
+import Nav from './Nav';
 
 class App extends Component {
   componentWillMount(){
@@ -21,6 +21,7 @@ class App extends Component {
         <Route path='/admin' component={Admin}/>
         <Route exact path='/' render={() => (
           <div className='container'>
+            <Nav/>
             <Header/>
             <Main />
             <Footer />

@@ -1,0 +1,127 @@
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body { 
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 100vh 100vh;
+  grid-template-columns: 1fr;
+  scroll-snap-type: y proximity;
+
+
+/* ------ Navbar ----- */  
+  .navbar {
+    position: fixed;
+    background: white;
+    width: 100vw;
+    display: grid;
+    justify-content: end;
+    
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-right: 3rem;
+      
+      li {
+        list-style: none;
+        
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+
+/* ------ Header ----- */  
+  .header {
+    background: url('/assets/images/backgroundtea.jpg') no-repeat 0/cover;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+    .header-title {
+      font-weight: 100;
+      font-size: 4rem;
+      background: rgba(255, 255, 255, 0.56);
+      padding: 4rem 2rem;
+      border: .5rem solid white;
+      
+      a {
+        text-decoration: none;
+        color: black;
+        width: inherit;
+      }
+    }
+  }
+  
+/* ------ Main ----- */  
+  .main {
+    display: grid;
+//    justify-content: center;
+    scroll-snap-align: start;
+
+    .posts {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
+      
+      .post {
+        background: thistle;
+        display: grid;
+        grid-template-rows: 10% 5% 1fr;
+        grid-template-areas:
+          "img title"
+          "img meta"
+          "img description";
+        
+        .post-title {
+          margin-bottom: 0;
+          font-weight: 100;
+          grid-area: title;
+//          background: #afafd8;
+          border-bottom: 1px solid black;
+          text-align: center;
+          font-size: 2rem;
+        }
+        
+        .post-metadata {
+          grid-area: meta;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          justify-items: center;
+          align-content: center;
+          color: grey;
+          font-style: italic;
+          
+          .post-metadata-date {
+          }
+          
+          post-metadata-author {
+          }
+            
+        }
+        
+        .post-description {
+          margin: 0;
+          grid-area: description;
+          border-top: 1px solid black;
+        }
+      }
+    }
+  }
+  
+/* ------ Footer ----- */  
+  .footer {
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@import 'admin';

@@ -35,19 +35,8 @@ class Header extends Component {
     const { handleSubmit, toggleLogIn } = this;
     
     return (
-      <header>
-        <h1><Link to='/'></Link></h1>
-
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              {/*<Link to='/contact'>Contact</Link>*/}
-            </li>
-          </ul>
-        </nav>
+      <header className='header'>
+        <h1 className='header-title'><Link to='/'>Simply Living Light</Link></h1>
       </header>
     )
   }

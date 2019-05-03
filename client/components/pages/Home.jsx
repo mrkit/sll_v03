@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../store';
@@ -9,19 +9,19 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    const bannerOverlay = document.getElementById('bannerOverlay');
-    const bannerTitle = document.getElementById('bannerTitle');
-    bannerTitle.addEventListener('mouseover', function(){
-      bannerOverlay.style.backgroundColor = 'rgba(50, 48, 62, 0.776)';
-      bannerOverlay.style.transition = 'all 1s';
-    });
+//    const bannerOverlay = document.getElementById('bannerOverlay');
+//    const bannerTitle = document.getElementById('bannerTitle');
+//    bannerTitle.addEventListener('mouseover', function(){
+//      bannerOverlay.style.backgroundColor = 'rgba(50, 48, 62, 0.776)';
+//      bannerOverlay.style.transition = 'all 1s';
+//    });
+//
+//    bannerTitle.addEventListener('mouseout', function(){
+//      bannerOverlay.style.backgroundColor = 'rgba(50, 48, 62, 0)';
+//      bannerOverlay.style.transition = 'all 2s';
+//    })
 
-    bannerTitle.addEventListener('mouseout', function(){
-      bannerOverlay.style.backgroundColor = 'rgba(50, 48, 62, 0)';
-      bannerOverlay.style.transition = 'all 2s';
-    })
-
-    const main = document.querySelector('main');
+//    const main = document.querySelector('main');
     
     const { username } = this.state;
     
@@ -37,13 +37,13 @@ class Home extends Component {
     const { username } = this.state;
     const { posts } = this.props;
     return (
-      <Fragment>
-        <div className="banner">
+      <>
+      {/*<div className="banner">
           <div className='banner-overlay' id='bannerOverlay'></div>
           <div className='banner-title' id='bannerTitle'>
             <h2>Simply Living Light</h2>
           </div>
-        </div>
+        </div>*/}
         
         <div className="posts">
          {
@@ -60,7 +60,7 @@ class Home extends Component {
           }
           
         </div>
-      </Fragment>
+      </>
     )
   }
 }

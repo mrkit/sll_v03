@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer>
+  <footer className='footer'>
     <div>
       <h2>Get in touch</h2>
       <p>info.simplylivinglight@gmail.com</p>

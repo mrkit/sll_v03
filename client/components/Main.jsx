@@ -5,7 +5,7 @@ import Contact from './pages/Contact';
 import Parallax from './pages/Parallax';
 
 const Main = () => (
-  <main>
+  <main className='main'>
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/contact' component={Contact}/>
