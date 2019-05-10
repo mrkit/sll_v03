@@ -38,7 +38,7 @@ class Posts extends Component {
           {
             posts.map(post => (
               <li key={post.id} className='admin-cms-posts-ul-li'>
-                {post.date}  |  <strong>{post.title}</strong>
+                <div>{post.date}  |  <strong>{post.title}</strong></div>
                 <form onSubmit={handleUpdate}>
                   <input type="hidden" value={post.id} name="id"/>
                   <button>Update</button>

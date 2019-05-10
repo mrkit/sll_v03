@@ -45,7 +45,7 @@ class CreatePost extends Component {
     return (
       <div className='admin-cms-create-post'>
         <h2>Create New Post:</h2>
-        <form onSubmit={handleCreatingPost}>
+        <form className='admin-cms-create-post-form' onSubmit={handleCreatingPost}>
           <input type='text' name='title' placeholder='Title' autoFocus autoComplete='off'/>
           <textarea name='article' cols="30" rows="10"></textarea>
           <button>Create new post</button>

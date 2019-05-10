@@ -1,3 +1,89 @@
 .admin {
-  background: thistle;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 90vh; //header then cms
+  
+  .admin-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid black;
+    align-items: center;
+    background: #f3e4f3;
+    
+    >a {
+      justify-self: end;
+    }
+    
+    >button {
+      width: 5rem;
+      justify-self: end;
+      margin-right: 3rem;
+    }
+  }
+  
+  .admin-cms {
+    display: grid;
+    height: auto;
+    grid-template-areas: 
+      "nav nav"
+      "posts cpost"
+      "posts cpost";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10vh 80vh;
+    
+    .admin-cms-nav {
+      grid-area: nav;
+      display: grid;
+    }
+    
+    .admin-cms-posts {
+      grid-area: posts;
+      text-align: center;
+      
+      .admin-cms-posts-ul {
+        display: grid;
+        justify-content: center;
+        padding: 0;
+        
+        .admin-cms-posts-ul-li {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+          border: 1px solid black;
+          height: 3.5rem;
+          width: 25rem;
+          align-content: center;
+          justify-items: center;
+        }
+        
+        .admin-cms-posts-ul-li:hover {
+          background: #afafaf;
+        }
+      }
+    }
+    
+    .admin-cms-create-post {
+      grid-area: cpost;
+      display: grid;
+      grid-template-rows: 9vh 5fr;
+      text-align: center;
+      
+      .admin-cms-create-post-form {
+        display: grid;
+        grid-template-rows: 5vh 45vh 5vh;
+        grid-gap: 1rem;
+        padding: 0 5rem;
+        
+        >input {
+          font-size: 1rem;
+        }
+        
+        >textarea {
+          border-radius: 4px;
+          font-size: 1rem;
+          font-family: sans-serif;
+          padding: 5px;
+        }
+      }
+    }
+  }
 }

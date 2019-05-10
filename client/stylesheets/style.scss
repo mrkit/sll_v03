@@ -124,6 +124,7 @@ body {
           grid-area: description;
           border-top: 1px solid black;
           padding-top: 1rem;
+          padding-left: 2rem;
         }
       }
     }
@@ -140,3 +141,4 @@ body {
 }
 
 @import 'admin';
+@import 'mediaqueries';
