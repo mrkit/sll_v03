@@ -6,7 +6,6 @@ class Contact extends Component {
     responseMessage: ''
   }
 
-
   handleSubmit = e => {
     e.preventDefault();
     const { name, email, subject, message } = e.target;
@@ -20,7 +19,6 @@ class Contact extends Component {
     e.target.email.value = '';
     e.target.subject.value = '';
     e.target.message.value = '';
-
   }
 
   render(){

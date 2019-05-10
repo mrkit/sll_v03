@@ -13,7 +13,7 @@ body {
 .container {
   display: grid;
   justify-content: center;
-  grid-template-rows: 100vh auto 16vh;
+  grid-template-rows: 100vh auto auto;
   grid-template-columns: 1fr;
   scroll-snap-type: y proximity;
 

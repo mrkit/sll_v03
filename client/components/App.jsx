@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Switch>
         <Route path='/admin' component={Admin}/>
-        <Route exact path='/' render={() => (
+        <Route path='/' render={() => (
           <div className='container'>
             <Nav/>
             <Header/>
