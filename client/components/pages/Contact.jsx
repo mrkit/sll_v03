@@ -25,10 +25,10 @@ class Contact extends Component {
     const { handleSubmit } = this;
 
     return (
-      <div className='contact-page'>
+      <div className='contact'>
         <h1>BE IN TOUCH</h1>
-        { this.state.responseMessage ? <h2 className='contact-page-response-message'>Success {this.state.responseMessage}</h2> : null }
-        <form className='contact-page-form' onSubmit={handleSubmit}>
+        { this.state.responseMessage ? <h2 className='contact-response-message'>Success {this.state.responseMessage}</h2> : null }
+        <form className='contact-form' onSubmit={handleSubmit}>
           <div>
             <input type="text" name='name' placeholder='Name *' autoComplete='off' autoFocus/>
             <input type="email" name='email' placeholder='Email *' autoComplete='off' />
