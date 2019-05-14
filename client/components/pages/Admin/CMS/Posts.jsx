@@ -1,32 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { fetchPosts } from '../../../../store';
+import { fetchPosts, thunkDeletePost } from '../../../../store';
 
 class Posts extends Component {
 
   componentDidMount(){
-    
     this.props.loadPosts();
   }
 
-  handleUpdate = e => {
-    e.preventDefault();
-  }
-  
-  handleDelete = e => {
-    e.preventDefault();
-    const id = Number(e.target.id.value);
-    
-    axios.delete(`/api/auth/${id}`)
-    .then(res => res.data)
-    .then(id => this.setState({ posts: posts.filter(post => post.id !== id)}))
-    .catch(err => console.log(`Axios delete error ${err.message}`));
-  }
-  
   render() {
     const { posts } = this.props;
-    const { handleUpdate, handleDelete } = this;
+    const { handleUpdate, handleDelete } = this.props;
     
     return (
       <div className='admin-cms-posts'>
@@ -59,6 +44,18 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
   loadPosts(){
      dispatch(fetchPosts());
+  },
+  
+  handleUpdate(e){
+    e.preventDefault();
+    console.log('Hello');
+  },
+  
+  handleDelete(e){
+    e.preventDefault();
+    const id = Number(e.target.id.value);
+    
+    dispatch(thunkDeletePost(id));
   }
 });
 

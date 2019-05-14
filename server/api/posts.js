@@ -26,7 +26,7 @@ router.put('/:id', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
-  
+
   Posts.destroy({ where: { id }})
   .then(() => res.send(id))
   .catch(next);

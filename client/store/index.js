@@ -6,10 +6,12 @@ import axios from 'axios';
 //ACTION TYPES
 const GET_POSTS = 'GET_POSTS';
 const CREATE_POST = 'CREATE_POST';
+const DELETE_POST = 'DELETE_POST';
 
 //ACTION CREATORS
 const getPosts = posts => ({ type: GET_POSTS, payload: posts });
 const createPost = post => ({ type: CREATE_POST, payload: post });
+const deletePost = id => ({ type: DELETE_POST, payload: id })
 
 //THUNK
 export const fetchPosts = () => dispatch => (
@@ -25,6 +27,13 @@ export const thunkCreatePost = ({ title, date, author, article }) => dispatch =>
   .catch(err => `Axios create post error ${err.message}`)
 );
 
+export const thunkDeletePost = id => dispatch => (
+  axios.delete(`/api/posts/${id}`)
+    .then(res => res.data)
+    .then(id => dispatch(deletePost(id)))
+    .catch(err => console.log(`Axios delete error ${err.message}`))
+)
+
 //INITIAL STATE
 const initialState = {
   posts: []
@@ -37,6 +46,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, posts: action.payload };
     case CREATE_POST:
       return { ...state, posts: [...state.posts, action.payload ] };
+    case DELETE_POST:
+      return { ...state, posts: state.posts.filter(post => post.id !== action.payload)};
     default:
       return state;
   }
