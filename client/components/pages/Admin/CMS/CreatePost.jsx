@@ -1,46 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { fethPosts } from '../../../../store';
+import { connect } from 'react-redux';
+import dateStamp from '../../../../helperFunctions/dateStamp';
+import { thunkCreatePost } from '../../../../store';
 
 class CreatePost extends Component {
   state = {
     posts: []
   }
 
-  dateStamp = () => {
-    const currentDate = new Date(),
-      date = currentDate.getDate(),
-      month = currentDate.getMonth()+1,
-      year = currentDate.getFullYear();
-
-    const pad = month => month < 10 ? '0'+month : month;
-
-    return `${pad(month)}/${date}/${year}`
-  }
-
-  handleCreatingPost = e => {
-    e.preventDefault();
-
-    const title = e.target.title.value,
-          article = e.target.article.value;
-
-    const date = this.dateStamp();
-    const author = 'luisa';
-
-    console.log(date);
-    axios.post('/api/posts', { title, date,  author, article })
-    .then(res => res.data)
-    .then(post => this.setState({ posts: [...this.state.posts, post]}))
-    .catch(err => `Axios create post error ${err.message}`)
+  componentDidMount(){
     
-
-    e.target.title.value = '';
-    e.target.author.value = '';
-    e.target.article.value = '';
   }
 
   render() {
-    const { handleCreatingPost } = this;
+    const { handleCreatingPost } = this.props;
 
     return (
       <div className='admin-cms-create-post'>
@@ -55,4 +29,24 @@ class CreatePost extends Component {
   }
 }
 
-export default CreatePost;
+const mapState = state => ({
+  posts: state.posts
+});
+
+const mapDispatch = dispatch => ({
+    handleCreatingPost(e){
+      e.preventDefault();
+      const title = e.target.title.value,
+            article = e.target.article.value;
+
+      const date = dateStamp();
+      const author = 'luisa';
+
+      dispatch(thunkCreatePost({ title, date, author, article }));
+
+      e.target.title.value = '';
+      e.target.article.value = '';
+   }
+});
+
+export default connect(mapState, mapDispatch)(CreatePost);

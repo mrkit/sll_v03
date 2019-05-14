@@ -29,12 +29,11 @@ class Admin extends Component {
 
     return (
       <div className='admin'>
-        <AdminHeader loggedIn={ loggedIn } handleLogout={handleLogout}/>
+        <AdminHeader loggedIn={ loggedIn } handleLogout={ handleLogout }/>
         { 
           loggedIn ? 
-          <CMS /> : <Login handleLogin={handleLogin}/>
+          <CMS /> : <Login handleLogin={ handleLogin }/>
         }
-
       </div>
     )
   }

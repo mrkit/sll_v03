@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
+import { fetchPosts } from '../../../../store';
 
 class Posts extends Component {
-  state = {
-    posts: []
-  }
 
   componentDidMount(){
-    axios.get('/api/posts')
-    .then(res => res.data)
-    .then(posts => this.setState({ posts }))
-
+    
+    this.props.loadPosts();
   }
 
   handleUpdate = e => {
@@ -28,7 +25,7 @@ class Posts extends Component {
   }
   
   render() {
-    const { posts } = this.state;
+    const { posts } = this.props;
     const { handleUpdate, handleDelete } = this;
     
     return (
@@ -55,5 +52,14 @@ class Posts extends Component {
     );
   }
 }
+const mapState = state => ({
+  posts: state.posts
+});
 
-export default Posts;
+const mapDispatch = dispatch => ({
+  loadPosts(){
+     dispatch(fetchPosts());
+  }
+});
+
+export default connect(mapState, mapDispatch)(Posts);
