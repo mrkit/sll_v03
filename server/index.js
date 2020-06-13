@@ -26,7 +26,9 @@ a.use((err, req, res, next) => {
   }
 });
 
-db.conn.sync({ force })
-.then(() => db.models.Users.create({ username: 'luisa', password: 'tokyo' }))  
-.then(() => db.models.Posts.create({title: 'Test Title', date:'11/2/2018', author: 'john', article: 'Test post'}))
-.then(() => a.listen(3006, console.log('listening on 3006')));
+a.listen(3006, console.log('listening on 3006'));
+
+//db.conn.sync({ force })
+//.then(() => db.models.Users.create({ username: 'luisa', password: 'tokyo' }))  
+//.then(() => db.models.Posts.create({title: 'Test Title', date:'11/2/2018', author: 'john', article: 'Test post'}))
+//.then(() => a.listen(3006, console.log('listening on 3006')));
