@@ -29,11 +29,13 @@ body {
     
     ul {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       padding-right: 3rem;
       
       li {
         list-style: none;
+        display: grid;
+        justify-content: center;
         
         a {
           text-decoration: none;
