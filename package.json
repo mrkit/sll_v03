@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode production & pm2 start --name sll server",
-    "dev": "webpack -w --mode development & NODE_ENV=development nodemon server"
+    "start": "webpack --mode production & NODE_ENV=production pm2 start --name sll server",
+    "dev": "NODE_ENV=development nodemon --watch server --exec node server"
   },
   "keywords": [],
   "author": "",

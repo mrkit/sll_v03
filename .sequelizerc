@@ -1,0 +1,14 @@
+const resolve = require('path').resolve;
+require('dotenv').config();
+
+const url = process.env.NODE_ENV == 'development' ?
+    process.env.DEV_DATABASE_URL : 
+    process.env.PROD_DATABASE_URL;
+
+module.exports = {
+  'migrations-path': resolve(__dirname, 'server', 'db', '_migrations'),
+  'models-path': resolve(__dirname, 'server', 'db'),
+  'config': resolve(__dirname, 'server', 'configs', 'sequelize.config.json'),
+  'seeders-path': resolve(__dirname, 'server', 'db', '_seeders'),
+  'url': url
+};

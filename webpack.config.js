@@ -1,12 +1,12 @@
-const r = require('path').resolve,
-      html = require('html-webpack-plugin'),
-      css = require('mini-css-extract-plugin');
+const resolve = require('path').resolve,
+      HTMLPlugin = require('html-webpack-plugin'),
+      MiniCSS = require('mini-css-extract-plugin');
 
 const config = {
   entry: './client',
   output: {
     filename: 'bundle.js',
-    path: r(__dirname, 'dist'),
+    path: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   resolve: {
@@ -37,15 +37,15 @@ const config = {
     }, {
       test: /\.(scss|css)/,
       use: [
-        css.loader,
+        MiniCSS.loader,
         'css-loader',
         'sass-loader'
       ]
     }]
   },
   plugins: [
-    new html({ template: './client/index.html' }),
-    new css()
+    new HTMLPlugin({ template: './client/index.html' }),
+    new MiniCSS()
   ]
 };
 

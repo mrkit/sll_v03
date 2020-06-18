@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express'),
       app = express(),
       resolve = require('path').resolve,
@@ -8,14 +9,29 @@ const express = require('express'),
 
 app.use('/assets', express.static(resolve(__dirname, '..', 'assets')));
 app.use([
-  e.static(r(__dirname, '..', 'dist')),
   morgan('dev'),
   json(),
   urlencoded({ extended: false })
 ]);
 
+if(process.env.NODE_ENV == 'development'){
+  const webpack = require('webpack'),
+        devMiddle = require('webpack-dev-middleware'),
+        hotMiddle = require('webpack-hot-middleware'),
+        config = require('./configs/webpack.dev.config.js');
+
+        const compiler = webpack(config);
+
+        app.use([
+          devMiddle(compiler, { publicPath: config.output.publicPath }),
+          hotMiddle(compiler)
+        ]);
+} else {
+  app.use(express.static(r(__dirname, '..', 'dist')))
+  app.get('/*', (req, res) => res.sendFile(resolve(__dirname, '..', 'dist', 'index.html')));
+}
+
 app.use('/api', require('./api'));
-app.get('/*', (req, res) => res.sendFile(resolve(__dirname, '..', 'dist', 'index.html')));
 
 app.use((err, req, res, next) => {
   if(err) {
