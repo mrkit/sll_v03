@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const { title, date, author, article } = req.body;
-  console.log(title, date, author, article);
+  // console.log(title, date, author, article);
   Posts.create({title, date, author, article })
   .then(post => res.send(post))
   .catch(next);

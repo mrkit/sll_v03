@@ -45,7 +45,7 @@ class Home extends Component {
           </div>
         </div>*/}
         
-        <div className="posts">
+        {/* This should be its own component <div className="posts">
          {
             posts.map(post => (
               <article className='post' key={post.id}>
@@ -58,9 +58,9 @@ class Home extends Component {
                 <p className="post-description">{post.article}</p>
               </article>
             ))
-          }
+          } 
           
-        </div>
+        </div>*/}
       </>
     )
   }

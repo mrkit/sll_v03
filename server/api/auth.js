@@ -43,11 +43,11 @@ function createToken(user){
 }
 
 function verifyToken(req, res, next){
-  console.log(req.headers)
+  // console.log(req.headers)
   if(req.headers.authorization){
     const token = req.headers.authorization.split(' ')[1];
     jwt.verify(token, jwt_password, function(err, user){
-      console.log('Token verified - how to send this sucker?', user);
+      // console.log('Token verified - how to send this sucker?', user);
       next();
     });
   } else {
