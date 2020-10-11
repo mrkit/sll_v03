@@ -50,7 +50,7 @@ class Blog extends Component {
             posts.map(post => (
               <article className='post' key={post.id}>
                 <h2 className='post-title'>{post.title}</h2>
-                <img className='post-img' src="/assets/images/cafe.jpg" alt={post.alt}/>
+                {/* <img className='post-img' src="/assets/images/cafe.jpg" alt={post.alt}/> */}
                 <div className='post-metadata'>
                   <p className="post-metadata-date">{post.date}</p>
                   <p className="post-metadata-author">{post.author}</p>
