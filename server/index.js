@@ -27,7 +27,7 @@ if(process.env.NODE_ENV == 'development'){
           hotMiddle(compiler)
         ]);
 } else {
-  app.use(express.static(r(__dirname, '..', 'dist')))
+  app.use(express.static(resolve(__dirname, '..', 'dist')))
   app.get('/*', (req, res) => res.sendFile(resolve(__dirname, '..', 'dist', 'index.html')));
 }
 
